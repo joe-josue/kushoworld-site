@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
+import { ArrowUpRight } from "lucide-react";
 
 const nav = [
   { href: "/world", label: "World" },
@@ -10,39 +10,54 @@ const nav = [
   { href: "/docs", label: "Docs" },
 ];
 
-const social = [
-  { href: "https://twitter.com/kushoworld", label: "Twitter / X" },
+const social: { href: string; label: string }[] = [
+  { href: "https://twitter.com/kushoworld", label: "X / Twitter" },
   { href: "https://discord.gg/kushoworld", label: "Discord" },
-  { href: "https://tiktok.com/@familiarsworld", label: "TikTok" },
+  { href: "https://tiktok.com/@familiarsworld", label: "TikTok — Famions" },
+  { href: "https://medium.com/@kushoworld", label: "Medium — News & Updates" },
+  { href: "https://github.com/kushoworld", label: "GitHub" },
+];
+
+const products: { href: string; label: string; external?: boolean }[] = [
+  { href: "https://studio.mithikal.com", label: "Mithikal", external: true },
+  { href: "https://shop.kushoworld.com", label: "Kusho Web Shop", external: true },
+  { href: "/products", label: "Collectors Profile (Soon)" },
+  { href: "/products", label: "Kusho Guardians" },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-[#060606] mt-24">
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <footer className="border-t border-white/[0.05] bg-[#060606]">
+      <div className="max-w-7xl mx-auto px-6 pt-16 pb-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-14">
           {/* Brand */}
-          <div>
-            <p className="text-white font-semibold tracking-widest text-sm uppercase mb-3">
-              KUSHO<span className="text-[#FF6B2B]">.</span>
+          <div className="md:col-span-1">
+            <Link
+              href="/"
+              className="text-white font-bold tracking-widest text-xs uppercase hover:opacity-60 transition-opacity block mb-4"
+            >
+              KUSHO
+            </Link>
+            <p className="text-white/30 text-xs leading-relaxed">
+              Filipino-founded Anime x Culture IP. Core-directed canon with
+              protocol-powered expansion.
             </p>
-            <p className="text-white/40 text-xs leading-relaxed max-w-xs">
-              Filipino-founded Anime x Culture IP ecosystem. Core-directed
-              canon with protocol-powered expansion.
+            <p className="text-white/15 text-[10px] mt-3 tracking-wide">
+              Operated by Malaya Labs
             </p>
           </div>
 
           {/* Pages */}
           <div>
-            <p className="text-white/30 text-[10px] tracking-widest uppercase mb-4">
+            <p className="text-white/20 text-[10px] tracking-widest uppercase mb-4">
               Pages
             </p>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2.5">
               {nav.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-white/40 text-xs tracking-wide hover:text-white transition-colors"
+                  className="text-white/35 text-xs tracking-wide hover:text-white/70 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -50,36 +65,77 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Products */}
+          <div>
+            <p className="text-white/20 text-[10px] tracking-widest uppercase mb-4">
+              Products
+            </p>
+            <div className="flex flex-col gap-2.5">
+              {products.map((p) =>
+                p.external ? (
+                  <a
+                    key={p.href}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-white/35 text-xs tracking-wide hover:text-white/70 transition-colors"
+                  >
+                    {p.label}
+                    <ArrowUpRight size={10} className="opacity-50" />
+                  </a>
+                ) : (
+                  <Link
+                    key={p.href}
+                    href={p.href}
+                    className="text-white/35 text-xs tracking-wide hover:text-white/70 transition-colors"
+                  >
+                    {p.label}
+                  </Link>
+                )
+              )}
+            </div>
+          </div>
+
           {/* Social */}
           <div>
-            <p className="text-white/30 text-[10px] tracking-widest uppercase mb-4">
-              Community
+            <p className="text-white/20 text-[10px] tracking-widest uppercase mb-4">
+              Community & News
             </p>
-            <div className="flex flex-col gap-2">
-              {social.map((link) => (
+            <div className="flex flex-col gap-2.5">
+              {social.map((s) => (
                 <a
-                  key={link.href}
-                  href={link.href}
+                  key={s.href}
+                  href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/40 text-xs tracking-wide hover:text-white transition-colors"
+                  className="inline-flex items-center gap-1.5 text-white/35 text-xs tracking-wide hover:text-white/70 transition-colors"
                 >
-                  {link.label}
+                  {s.label}
+                  <ArrowUpRight size={10} className="opacity-40" />
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        <Separator className="my-10 bg-white/5" />
-
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-white/20 text-[11px] tracking-wide">
+        <div className="border-t border-white/[0.04] pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+          <p className="text-white/15 text-[11px]">
             © 2026 Kusho World. All rights reserved.
           </p>
-          <p className="text-white/20 text-[11px] tracking-wide">
-            Operated by Malaya Labs
-          </p>
+          <div className="flex items-center gap-5">
+            <Link
+              href="/docs"
+              className="text-white/15 text-[11px] hover:text-white/35 transition-colors"
+            >
+              Documentation
+            </Link>
+            <Link
+              href="/protocol"
+              className="text-white/15 text-[11px] hover:text-white/35 transition-colors"
+            >
+              Protocol
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

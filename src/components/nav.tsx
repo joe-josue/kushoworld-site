@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 
 const links = [
   { href: "/world", label: "World" },
@@ -13,7 +13,6 @@ const links = [
   { href: "/products", label: "Products" },
   { href: "/get-involved", label: "Get Involved" },
   { href: "/labs", label: "Labs" },
-  { href: "/docs", label: "Docs" },
 ];
 
 export function Nav() {
@@ -22,7 +21,7 @@ export function Nav() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 24);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -32,7 +31,7 @@ export function Nav() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "nav-blur border-b border-white/5"
+          ? "nav-blur border-b border-white/[0.04]"
           : "bg-transparent"
       )}
     >
@@ -40,9 +39,9 @@ export function Nav() {
         {/* Logo */}
         <Link
           href="/"
-          className="text-white font-semibold tracking-widest text-sm uppercase hover:opacity-70 transition-opacity"
+          className="text-white font-bold tracking-widest text-xs uppercase hover:opacity-60 transition-opacity"
         >
-          KUSHO<span className="text-[#FF6B2B]">.</span>
+          KUSHO
         </Link>
 
         {/* Desktop nav */}
@@ -52,10 +51,10 @@ export function Nav() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-xs tracking-widest uppercase transition-colors duration-200",
+                "text-[11px] tracking-widest uppercase transition-colors duration-200",
                 pathname === link.href
                   ? "text-white"
-                  : "text-white/40 hover:text-white/80"
+                  : "text-white/35 hover:text-white/70"
               )}
             >
               {link.label}
@@ -63,46 +62,63 @@ export function Nav() {
           ))}
         </nav>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* Right side */}
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href="https://medium.com/@kushoworld"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[11px] tracking-widest uppercase text-white/25 hover:text-white/60 transition-colors"
+          >
+            News
+          </a>
           <Link
             href="/get-involved"
-            className="text-xs tracking-widest uppercase bg-[#FF6B2B] text-white px-4 py-2 hover:bg-[#e85a1f] transition-colors"
+            className="text-[11px] tracking-widest uppercase border border-white/15 text-white/60 px-4 py-2 hover:border-white/30 hover:text-white transition-colors"
           >
             Join
           </Link>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile */}
         <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger className="md:hidden text-white/60 hover:text-white transition-colors">
-            <Menu size={20} />
+          <SheetTrigger className="md:hidden text-white/50 hover:text-white transition-colors">
+            <Menu size={18} />
           </SheetTrigger>
           <SheetContent
             side="right"
             className="bg-[#0a0a0a] border-l border-white/5 w-72"
           >
-            <div className="flex flex-col gap-1 mt-12">
+            <div className="flex flex-col mt-12">
               {links.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "text-sm tracking-widest uppercase py-3 px-4 transition-colors",
+                    "text-sm tracking-widest uppercase py-4 px-6 border-b border-white/5 transition-colors",
                     pathname === link.href
-                      ? "text-white bg-white/5"
-                      : "text-white/40 hover:text-white"
+                      ? "text-white"
+                      : "text-white/35 hover:text-white"
                   )}
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="mt-6 px-4">
+              <a
+                href="https://medium.com/@kushoworld"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="text-sm tracking-widest uppercase py-4 px-6 border-b border-white/5 text-white/25 hover:text-white transition-colors"
+              >
+                News
+              </a>
+              <div className="px-6 pt-8">
                 <Link
                   href="/get-involved"
                   onClick={() => setOpen(false)}
-                  className="block text-center text-xs tracking-widest uppercase bg-[#FF6B2B] text-white px-4 py-3 hover:bg-[#e85a1f] transition-colors"
+                  className="block text-center text-[11px] tracking-widest uppercase bg-[#FF6B2B] text-white px-4 py-3 hover:bg-[#e85a1f] transition-colors"
                 >
                   Get Involved
                 </Link>
