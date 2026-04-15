@@ -87,12 +87,15 @@ export default function Home() {
             </span>
             {/* Anton display headline */}
             <h1 className="font-display text-6xl md:text-8xl lg:text-9xl leading-[0.95] mb-7">
-              A world being<br />built in public.
+              Freedom is not given,<br />it is taken.
             </h1>
-            <p className="font-sans text-white/65 text-base md:text-lg leading-relaxed max-w-md mb-10">
-              Kusho started as a 5,555-character collection in 2022. It has grown
-              into an IP ecosystem with its own protocol, studio, and builder
-              community. The work is ongoing and the world is open.
+            <p className="font-sans text-white/65 text-base md:text-lg leading-relaxed max-w-md mb-3">
+              Kusho is a multiverse adventure of revolution and self-discovery.
+            </p>
+            <p className="font-sans text-white/35 text-sm leading-relaxed max-w-md mb-10">
+              A Filipino-founded IP ecosystem rooted in anime, mythology, and a
+              future being built in public. Core-directed canon. Protocol-powered
+              expansion.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <Link href="/world" className="btn-ku">
@@ -111,12 +114,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 pt-20 pb-10">
           <p className="label-section mb-3">— The Universe</p>
           <h2 className="font-heading text-4xl md:text-6xl leading-tight mb-3">
-            Characters, lore, and a community<br />that earns its place.
+            A universe forged in<br />resistance and memory.
           </h2>
-          <p className="font-sans text-white/60 text-sm md:text-base leading-relaxed max-w-lg mb-12">
+          <p className="font-sans text-white/60 text-sm md:text-base leading-relaxed max-w-lg mb-4">
+            Shinsekai, 2120. The Philippines has been renamed, the gods locked
+            away in relics, three generations raised under a colonial flag.
+            The Shojin are the ones who remember.
+          </p>
+          <p className="font-sans text-white/35 text-xs md:text-sm leading-relaxed max-w-lg mb-12">
             The Shojin are the canonical core. Famions are the cultural engine.
-            Together they form a universe where what you contribute can become
-            part of the official record.
+            What you contribute can become part of the official record.
           </p>
         </div>
 
@@ -182,12 +189,12 @@ export default function Home() {
             <h2 className="font-display text-5xl md:text-7xl leading-[0.95] mb-5 max-w-2xl">
               Core holds the canon.
               <br />
-              <em className="not-italic text-white/50">The community shapes the edges.</em>
+              <em className="not-italic text-white/50">The world is open to builders.</em>
             </h2>
             <p className="font-sans text-white/65 text-sm md:text-base leading-relaxed max-w-lg mb-8">
-              Kusho operates on a participation model, not a speculation model.
-              Four defined lanes for contributing — each with real expectations,
-              real rights, and a path to the official record.
+              The protocol is the engine. Four defined lanes — collector,
+              creator, developer, operator — each with real expectations, real
+              rights, and a clear path to your first contribution.
             </p>
             <Link href="/protocol" className="btn-ghost-ku w-fit">
               Read the Protocol →

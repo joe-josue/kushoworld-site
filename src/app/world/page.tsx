@@ -5,20 +5,20 @@ import { ArrowRight } from "lucide-react";
 const lore = [
   {
     title: "Shojin",
-    subtitle: "The Flagship Collection",
-    body: "5,555 characters born on-chain. The Shojin are the core identity artifacts of Kusho World — the cultural anchors from which all canon radiates. V2 migration brings upgraded art, reworked traits, and new chain direction.",
+    subtitle: "The Canonical Core",
+    body: "In Shinsekai 2120, the Shojin are the revolutionary people — warriors, scholars, and rebels from a future Philippines that refused to be erased. On-chain, they are the identity artifacts from which all Kusho World canon radiates. The cultural anchors. The official record.",
     tag: "Flagship",
   },
   {
     title: "Famions",
-    subtitle: "The Distribution Engine",
-    body: "Companion characters with cultural reach. Famions are the bridge between mainstream culture and the Kusho ecosystem — lightweight, expressive, and viral by design. 40K+ TikTok audience and growing.",
+    subtitle: "The Cultural Engine",
+    body: "Spirit creatures from the boundary between realms. Ancient Filipinos bonded with Famions through ritual — partnership, not domestication. The Colonists banned it. The Seishi rediscovered it. Famions are the bridge between the Kusho universe and mainstream culture: expressive, viral, and tied to the world by blood.",
     tag: "Companion Brand",
   },
   {
     title: "Guardians",
     subtitle: "The Onchain Operators",
-    body: "Kusho Guardians are autonomous NFT familiars with ERC-6551 independent wallets. Born from the YGG Playfest Hackathon, they now anchor an onchain MMO-lite with Sovrun backing.",
+    body: "Autonomous NFT familiars with ERC-6551 independent wallets. Born from the YGG Playfest Hackathon — won ₱220K, secured a deal with Sovrun in the Hyperliquid ecosystem. An MMO-lite where the creatures have their own economies. Prompt-to-play. Player-driven.",
     tag: "Game Layer",
   },
 ];
@@ -26,19 +26,19 @@ const lore = [
 const principles = [
   {
     title: "Canon is earned, not claimed.",
-    body: "What becomes official Kusho World canon must pass through Core review and ratification. Community proposals are welcome — Core decides.",
+    body: "What becomes official Kusho World canon must pass through Core review and ratification. Community proposals are welcome — Core decides. This is not a democracy of lore.",
   },
   {
     title: "Community expands the edges.",
-    body: "Builders, creators, and collectors contribute to the universe. They can propose, create, and prove. Core curates what becomes permanent.",
+    body: "Builders, creators, and collectors contribute to the universe. They can propose, create, and prove. Core curates what becomes permanent. The edges grow outward from the center.",
   },
   {
     title: "IP compounds over time.",
-    body: "Each character, story, and product adds to a shared cultural asset. The Kusho IP grows more valuable as more builders participate with clear rights.",
+    body: "Each character, story, and product adds to a shared cultural asset. The Kusho IP grows more valuable as more builders participate with clear rights — because the world itself gets richer.",
   },
   {
     title: "Filipino roots. Global reach.",
-    body: "Kusho was founded to put the Philippines on-chain. The cultural DNA is Filipino. The ambition is universal.",
+    body: "Kusho is a universe rooted in Filipino mythology, language, and history. The DNA is specific. The ambition is universal. Shinsekai is not a metaphor — it is a mirror.",
   },
 ];
 
@@ -65,8 +65,9 @@ export default function WorldPage() {
             The Universe.
           </h1>
           <p className="font-sans text-white/60 text-base max-w-xl leading-relaxed">
-            A living IP ecosystem built on Filipino culture, anime aesthetics,
-            and a community that earns its way into canon.
+            Shinsekai, 2120. The Philippines renamed. The gods locked away.
+            Three generations raised under a colonial flag — and a resistance
+            that refused to let the old world die.
           </p>
         </div>
       </section>
@@ -76,24 +77,42 @@ export default function WorldPage() {
         <div className="max-w-3xl">
           <p className="label-section mb-4">— What Kusho Is</p>
           <h2 className="font-heading text-3xl md:text-5xl leading-tight mb-6">
-            More than a collection.
+            A revolution. An ecosystem.
             <br />
             <span className="text-white/30">A compounding loop.</span>
           </h2>
           <p className="font-sans text-white/60 leading-relaxed text-base md:text-lg mb-4">
-            Kusho World is a Filipino-founded Anime x Culture IP ecosystem that
-            started from a PFP collection and is being rebuilt into a broader
-            brand and builder network.
+            Kusho World is a Filipino-founded Anime x Culture IP ecosystem.
+            The story lives in Shinsekai 2120 — a dystopian future where advanced
+            technology and magic are the same thing, and a resistance called the
+            Shojin is fighting to remember who they were before the world was renamed.
           </p>
           <p className="font-sans text-white/40 leading-relaxed">
             IP attracts builders and audiences. Builders create products and
-            content. Products create distribution and revenue. Revenue funds
-            treasury resilience and new execution. The loop compounds.
+            content. Products create distribution and revenue. The loop
+            compounds — and the world gets richer with every contribution that
+            earns its place in the canon.
           </p>
         </div>
       </section>
 
       <hr className="border-t border-white/[0.05]" />
+
+      {/* Lore Pull Quote */}
+      <section className="bg-[#060606] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="font-display text-3xl md:text-5xl text-white/80 leading-[1.1] mb-6">
+              &ldquo;Before the Colonists came, we knew the world as it truly was.
+              The realms breathed alongside us — the wind carried whispers
+              from the mountains, the rivers flowed with memories from the sea.&rdquo;
+            </p>
+            <p className="font-sans text-white/25 text-xs tracking-widest uppercase">
+              — Manong Pantas, narration
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Character Universes */}
       <section className="max-w-7xl mx-auto px-6 py-20">
@@ -115,6 +134,43 @@ export default function WorldPage() {
         </div>
       </section>
 
+      {/* Setting teaser */}
+      <section className="bg-[#080808] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            <div className="md:col-span-1">
+              <p className="label-section mb-4">— The Setting</p>
+              <h2 className="font-heading text-3xl md:text-4xl leading-tight">
+                Shinsekai, 2120.
+              </h2>
+            </div>
+            <div className="md:col-span-2 flex flex-col gap-5">
+              <p className="font-sans text-white/55 text-sm leading-relaxed">
+                The Philippines was renamed eighty-two years ago. Three generations
+                have been born under the Colonist flag. Their technology — built on
+                stolen knowledge from the Realm of Magic — fused ancient Filipino
+                mysticism with cybernetics. What the Colonists call advanced science,
+                the old world called prayer.
+              </p>
+              <p className="font-sans text-white/30 text-sm leading-relaxed">
+                The cosmology spans 10 realms — Kaluwalhatian (the Heavens),
+                Kagubatan (the Forests), Kadiliman (the Darkness), Kadamgo
+                (Dreams) — and a hidden tenth, the Kusho World, that holds the
+                fabric of all existence together. Whoever controls Kawalan
+                controls everything.
+              </p>
+              <div className="flex flex-wrap gap-3 mt-2">
+                {["9 Realms + The Void", "Shinsekai 2120", "Filipino Mythic-Tech", "Revolution Arc"].map((tag) => (
+                  <span key={tag} className="font-heading text-[9px] tracking-[0.15em] uppercase text-white/25 border border-white/10 px-3 py-1.5">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Character visual */}
       <section className="relative py-20 bg-[#060606] overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
@@ -127,12 +183,12 @@ export default function WorldPage() {
               <p className="font-sans text-white/55 leading-relaxed mb-4">
                 The Shojin V2 migration brings upgraded art, reworked traits,
                 and new chain direction into the Sovrun ecosystem on Hyperliquid.
-                V1 holders burn to claim V2 — gas only, as baseline.
+                V1 holders burn to claim V2 — gas only, as baseline. The
+                characters evolve with the story.
               </p>
               <p className="font-sans text-white/30 text-sm leading-relaxed mb-8">
-                Final migration dates, contract addresses, and advanced trait
-                mechanics are in progress. Follow universe updates for
-                announcements.
+                Final migration dates, contract addresses, and trait mechanics
+                are in progress. Follow universe updates for announcements.
               </p>
               <Link href="/get-involved" className="btn-ku">
                 Follow Updates <ArrowRight size={12} />
@@ -202,6 +258,44 @@ export default function WorldPage() {
                 <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 p-3 opacity-0 group-hover:opacity-100 transition-opacity">
                   <p className="font-heading text-[11px] tracking-[0.1em] uppercase text-white/70">{item.label}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Origin Story */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <hr className="border-t border-white/[0.05] mb-20" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+          <div>
+            <p className="label-section mb-4">— About the Origin</p>
+            <h2 className="font-heading text-3xl md:text-4xl leading-tight mb-5">
+              Where Kusho came from.
+            </h2>
+            <p className="font-sans text-white/55 text-sm leading-relaxed mb-4">
+              Kusho World began as a 5,555-character genesis PFP collection.
+              In 2023, Joe J. acquired the project with a stewardship-first
+              mandate — less speculation, more world-building. The acquisition
+              marked a shift: from collection to IP ecosystem.
+            </p>
+            <p className="font-sans text-white/30 text-sm leading-relaxed">
+              The Shojin genesis holders remain the canonical core. Everything
+              built since — the protocol, the studio, the game, the apparel —
+              exists because the foundation was worth building on.
+            </p>
+          </div>
+          <div className="flex flex-col gap-5">
+            {[
+              { year: "2022", event: "Kusho World genesis collection launches. 5,555 Shojin on-chain." },
+              { year: "2023", event: "Joe J. acquires Kusho World. Stewardship-first revival begins." },
+              { year: "2024", event: "Mithikal studio launched. Guardians wins YGG Playfest Hackathon." },
+              { year: "2025", event: "Sovrun deal signed. Guardians enters active development. Famions reach 40K+ TikTok." },
+              { year: "2026", event: "Shojin V2 migration in progress. Collectors Profile in development." },
+            ].map((item, i) => (
+              <div key={i} className="flex gap-8 items-start">
+                <p className="font-mono text-white/20 text-xs flex-none w-10 mt-0.5">{item.year}</p>
+                <p className="font-sans text-white/50 text-sm leading-relaxed">{item.event}</p>
               </div>
             ))}
           </div>
