@@ -28,8 +28,9 @@ export function Nav() {
 
   return (
     <header
+      style={{ top: 0, left: 0, right: 0 }}
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed z-50 transition-all duration-500",
         scrolled ? "nav-blur border-b border-white/[0.04]" : "bg-transparent"
       )}
     >
