@@ -49,7 +49,7 @@ export default function WorldPage() {
       <section className="relative min-h-[70vh] flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/assets/Shojin Portal Cinematic.jpg"
+            src="/assets/Shojin Portal Full.jpg"
             alt="Kusho World"
             fill
             className="object-cover object-center"

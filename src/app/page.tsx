@@ -68,7 +68,7 @@ export default function Home() {
       <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/assets/Shojin Portal Cinematic.jpg"
+            src="/assets/Shojin Portal Full.jpg"
             alt="Kusho World"
             fill
             className="object-cover object-center scale-[1.02]"
@@ -467,7 +467,7 @@ export default function Home() {
       {/* ══════════ CONTACT / SOCIAL ══════════ */}
       <section className="relative overflow-hidden bg-[#080808] py-24">
         <div className="absolute inset-0 opacity-10">
-          <Image src="/assets/Shojin Portal Cinematic.jpg" alt="" fill className="object-cover object-top" />
+          <Image src="/assets/Shojin Portal Full.jpg" alt="" fill className="object-cover object-top" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808] to-[#080808]/95" />
 
