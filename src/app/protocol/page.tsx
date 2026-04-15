@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { ArrowRight } from "lucide-react";
 
 const lanes = [
@@ -36,22 +34,18 @@ const lanes = [
 
 const steps = [
   {
-    n: "1",
     title: "Propose",
     body: "Submit a proposal through the defined intake. Include scope, intent, and how it fits existing canon.",
   },
   {
-    n: "2",
     title: "Review",
     body: "Core evaluates alignment with Kusho's IP and canon principles. Feedback is provided within the published cadence.",
   },
   {
-    n: "3",
     title: "Prove",
     body: "Contributor executes the proposal. Community and Core observe. Quality and alignment are assessed.",
   },
   {
-    n: "4",
     title: "Ratify",
     body: "Core ratifies what becomes permanent canon. Contributor earns reputation and recognized contributor status.",
   },
@@ -62,22 +56,19 @@ export default function ProtocolPage() {
     <div className="flex flex-col">
       {/* Header */}
       <section className="pt-36 pb-20 max-w-7xl mx-auto px-6 w-full">
-        <Badge
-          variant="outline"
-          className="border-[#FF6B2B]/40 text-[#FF6B2B] bg-[#FF6B2B]/5 text-[10px] tracking-widest uppercase mb-5"
-        >
+        <span className="font-heading text-[10px] tracking-[0.2em] uppercase text-white/35 border-l-2 border-[#FF6B2B] pl-3 mb-5 block w-fit">
           Protocol
-        </Badge>
+        </span>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-none mb-4">
+            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mb-4">
               Participation
               <br />
-              by design.
+              <span className="text-white/30">by design.</span>
             </h1>
           </div>
           <div>
-            <p className="text-white/50 text-base leading-relaxed">
+            <p className="font-sans text-white/55 text-base leading-relaxed">
               Core directs canon. Community expands the edges. The protocol
               defines how contribution is structured, earned, and ratified —
               with clear rights at every step.
@@ -86,42 +77,34 @@ export default function ProtocolPage() {
         </div>
       </section>
 
-      <Separator className="bg-white/5" />
+      <hr className="border-t border-white/[0.05]" />
 
       {/* Summary */}
       <section className="max-w-7xl mx-auto px-6 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5">
-          <div className="bg-[#080808] p-8 md:col-span-2">
-            <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-4">
-              Protocol Summary
-            </p>
-            <p className="text-xl md:text-2xl font-semibold leading-relaxed text-white/90 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="panel-border p-8 md:col-span-2">
+            <p className="label-section mb-4">— Protocol Summary</p>
+            <p className="font-heading text-2xl md:text-3xl text-white/90 mb-4 leading-tight">
               &ldquo;Core directs canon. Community expands the edges.&rdquo;
             </p>
-            <p className="text-white/40 leading-relaxed">
+            <p className="font-sans text-white/45 leading-relaxed text-sm">
               Kusho World operates through defined participation lanes. Each lane
               carries clear expectations, a clear path to contribution, and
               defined rights over what is produced. Nothing is vague. Nothing is
               left to assumption.
             </p>
           </div>
-          <div className="bg-[#080808] p-8 flex flex-col justify-between">
+          <div className="panel-border p-8 flex flex-col justify-between">
             <div>
-              <p className="text-white/30 text-[10px] tracking-widest uppercase mb-3">
-                Authority
-              </p>
-              <p className="text-white/70 text-sm leading-relaxed">
+              <p className="label-section mb-3">— Authority</p>
+              <p className="font-sans text-white/60 text-sm leading-relaxed mt-3">
                 Kusho Core ratifies what becomes canon. Community can propose
                 and prove. Core decides.
               </p>
             </div>
             <div className="mt-8">
-              <Link
-                href="/docs"
-                className="inline-flex items-center gap-2 text-[#FF6B2B] text-[10px] tracking-widest uppercase hover:opacity-70 transition-opacity"
-              >
-                Read Full Protocol Docs
-                <ArrowRight size={10} />
+              <Link href="/docs" className="btn-ghost-ku">
+                Read Full Protocol Docs <ArrowRight size={10} />
               </Link>
             </div>
           </div>
@@ -131,40 +114,24 @@ export default function ProtocolPage() {
       {/* Contribution Lanes */}
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="mb-12">
-          <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-3">
-            Contribution Lanes
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Choose your path.
-          </h2>
+          <p className="label-section mb-3">— Contribution Lanes</p>
+          <h2 className="font-heading text-3xl md:text-5xl">Choose your path.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5">
+        <div className="flex flex-col divide-y divide-white/[0.06]">
           {lanes.map((lane) => (
             <div
               key={lane.id}
-              className="bg-[#080808] p-8 flex flex-col justify-between group hover:bg-[#0d0d0d] transition-colors"
+              className="py-8 grid grid-cols-1 md:grid-cols-[80px_1fr_auto] gap-6 items-start group"
             >
+              <p className="font-heading text-sm text-[#C9A84C]/50">{lane.id}</p>
               <div>
-                <div className="flex items-center justify-between mb-5">
-                  <p className="text-[#FF6B2B]/40 text-xs font-mono">{lane.id}</p>
-                  <Badge
-                    variant="outline"
-                    className="border-white/10 text-white/30 text-[9px] tracking-widest uppercase"
-                  >
-                    {lane.name}
-                  </Badge>
-                </div>
-                <h3 className="text-xl font-bold mb-3">{lane.name}</h3>
-                <p className="text-white/40 text-sm leading-relaxed">
+                <h3 className="font-heading text-2xl mb-2">{lane.name}</h3>
+                <p className="font-sans text-white/45 text-sm leading-relaxed">
                   {lane.description}
                 </p>
               </div>
-              <Link
-                href="/get-involved"
-                className="mt-8 inline-flex items-center gap-2 text-white/30 text-[10px] tracking-widest uppercase hover:text-[#FF6B2B] transition-colors"
-              >
-                {lane.action}
-                <ArrowRight size={10} />
+              <Link href="/get-involved" className="btn-ghost-ku whitespace-nowrap mt-1">
+                {lane.action} <ArrowRight size={10} />
               </Link>
             </div>
           ))}
@@ -172,32 +139,26 @@ export default function ProtocolPage() {
       </section>
 
       {/* Reputation */}
-      <section className="py-20 bg-[#060606] mt-20">
+      <section className="py-20 bg-[#060606] mt-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-3">
-              Reputation & Progression
-            </p>
-            <h2 className="text-3xl font-bold">Contribution compounds.</h2>
+            <p className="label-section mb-3">— Reputation & Progression</p>
+            <h2 className="font-heading text-3xl md:text-5xl">Contribution compounds.</h2>
           </div>
           <div className="max-w-2xl">
-            <p className="text-white/50 leading-relaxed mb-4">
+            <p className="font-sans text-white/55 leading-relaxed mb-4">
               Kusho tracks contributor reputation across lanes. As contributions
               are reviewed, proved, and ratified, contributors gain recognized
               standing within the ecosystem.
             </p>
-            <p className="text-white/30 leading-relaxed text-sm">
+            <p className="font-sans text-white/30 leading-relaxed text-sm">
               Detailed reputation mechanics, thresholds, and progression rules
               live in the full protocol documentation. The main site gives you
               enough to orient — the docs give you the full picture.
             </p>
             <div className="mt-8">
-              <Link
-                href="/docs"
-                className="inline-flex items-center gap-2 border border-white/10 text-white/50 text-xs tracking-widest uppercase px-5 py-2.5 hover:border-white/20 hover:text-white transition-colors"
-              >
-                Open Protocol Docs
-                <ArrowRight size={11} />
+              <Link href="/docs" className="btn-ghost-ku">
+                Open Protocol Docs <ArrowRight size={11} />
               </Link>
             </div>
           </div>
@@ -207,19 +168,23 @@ export default function ProtocolPage() {
       {/* Canonization Flow */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="mb-12">
-          <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-3">
-            Canonization Flow
-          </p>
-          <h2 className="text-3xl font-bold">How it works.</h2>
+          <p className="label-section mb-3">— Canonization Flow</p>
+          <h2 className="font-heading text-3xl md:text-5xl">How it works.</h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-px bg-white/5">
+        <div className="flex flex-col divide-y divide-white/[0.06]">
           {steps.map((step, i) => (
-            <div key={i} className="bg-[#080808] p-8">
-              <p className="text-4xl font-bold text-white/5 mb-4">{step.n}</p>
-              <h3 className="text-lg font-semibold mb-3 text-[#FF6B2B]">
-                {step.title}
-              </h3>
-              <p className="text-white/40 text-sm leading-relaxed">{step.body}</p>
+            <div key={i} className="grid grid-cols-[60px_1fr] gap-8 py-8 group">
+              <div className="text-right">
+                <span className="font-display text-5xl text-white/[0.07] leading-none select-none">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div>
+                <p className="font-heading text-2xl text-white/85 mb-2 group-hover:text-[#C9A84C] transition-colors">
+                  {step.title}
+                </p>
+                <p className="font-sans text-white/45 text-sm leading-relaxed">{step.body}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -227,29 +192,22 @@ export default function ProtocolPage() {
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="border border-white/5 p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="border border-[#FF6B2B]/15 p-10 md:p-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+            <h2 className="font-heading text-3xl md:text-4xl mb-2">
               Ready to contribute?
             </h2>
-            <p className="text-white/40 text-sm max-w-md">
+            <p className="font-sans text-white/40 text-sm max-w-md">
               Pick your lane and start the intake. First contribution within
               your first week.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href="/get-involved"
-              className="inline-flex items-center gap-2 bg-[#FF6B2B] text-white text-xs tracking-widest uppercase px-6 py-3 hover:bg-[#e85a1f] transition-colors"
-            >
-              Join Contributor Flow
-              <ArrowRight size={12} />
+          <div className="flex flex-wrap gap-4">
+            <Link href="/get-involved" className="btn-ku">
+              Join Contributor Flow <ArrowRight size={12} />
             </Link>
-            <Link
-              href="/docs"
-              className="inline-flex items-center gap-2 border border-white/15 text-white/60 text-xs tracking-widest uppercase px-6 py-3 hover:border-white/30 hover:text-white transition-colors"
-            >
-              Open Full Docs
+            <Link href="/docs" className="btn-ghost-ku">
+              Open Full Docs →
             </Link>
           </div>
         </div>

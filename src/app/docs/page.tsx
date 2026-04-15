@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { ArrowRight, ExternalLink } from "lucide-react";
 
 const docSections = [
@@ -93,27 +91,46 @@ const roadmapSignals = [
   { label: "Governance Expansion", status: "Deferred — post treasury maturity" },
 ];
 
+function statusSpan(status: string) {
+  if (status === "In Progress") {
+    return (
+      <span className="font-heading text-[9px] tracking-[0.12em] uppercase text-[#FF6B2B]">
+        In Progress
+      </span>
+    );
+  }
+  if (status === "Coming") {
+    return (
+      <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-white/25">
+        ◌ Coming
+      </span>
+    );
+  }
+  return (
+    <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-white/20">
+      {status}
+    </span>
+  );
+}
+
 export default function DocsPage() {
   return (
     <div className="flex flex-col">
       {/* Header */}
       <section className="pt-36 pb-20 max-w-7xl mx-auto px-6 w-full">
-        <Badge
-          variant="outline"
-          className="border-[#FF6B2B]/40 text-[#FF6B2B] bg-[#FF6B2B]/5 text-[10px] tracking-widest uppercase mb-5"
-        >
+        <span className="font-heading text-[10px] tracking-[0.2em] uppercase text-white/35 border-l-2 border-[#FF6B2B] pl-3 mb-5 block w-fit">
           Docs
-        </Badge>
+        </span>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-none mb-4">
+            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mb-4">
               Transparency.
               <br />
               <span className="text-white/30">Depth.</span>
             </h1>
           </div>
           <div>
-            <p className="text-white/50 text-base leading-relaxed">
+            <p className="font-sans text-white/55 text-base leading-relaxed">
               The Docs hub is where the full rules live. Main site gives you
               summaries and intent. Docs give you the operational detail.
             </p>
@@ -121,16 +138,14 @@ export default function DocsPage() {
         </div>
       </section>
 
-      <Separator className="bg-white/5" />
+      <hr className="border-t border-white/[0.05]" />
 
       {/* SoR Link */}
       <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="bg-[#0d0d0d] border border-[#FF6B2B]/10 p-6 flex items-center justify-between gap-4">
+        <div className="panel-border p-6 flex items-center justify-between gap-4">
           <div>
-            <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-1">
-              System of Record
-            </p>
-            <p className="text-white/70 text-sm">
+            <p className="label-section mb-1">— System of Record</p>
+            <p className="font-sans text-white/60 text-sm mt-2">
               The Kusho World SoR is the living canonical source of truth —
               facts, decisions, timelines, and open questions.
             </p>
@@ -139,10 +154,9 @@ export default function DocsPage() {
             href="https://github.com/kushoworld"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-none inline-flex items-center gap-2 border border-white/10 text-white/50 text-[10px] tracking-widest uppercase px-4 py-2.5 hover:border-white/20 hover:text-white transition-colors"
+            className="btn-ghost-ku flex-none whitespace-nowrap"
           >
-            View SoR
-            <ExternalLink size={10} />
+            View SoR <ExternalLink size={10} />
           </a>
         </div>
       </section>
@@ -150,35 +164,28 @@ export default function DocsPage() {
       {/* Doc Sections */}
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="mb-12">
-          <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-3">
-            Documentation
-          </p>
-          <h2 className="text-3xl font-bold">Full rules. Full context.</h2>
+          <p className="label-section mb-3">— Documentation</p>
+          <h2 className="font-heading text-3xl md:text-5xl">Full rules. Full context.</h2>
         </div>
         <div className="flex flex-col gap-12">
           {docSections.map((section, i) => (
             <div key={i}>
-              <p className="text-white/30 text-[10px] tracking-widest uppercase mb-4">
-                {section.category}
-              </p>
-              <div className="flex flex-col gap-px bg-white/5">
+              <p className="label-section mb-4">— {section.category}</p>
+              <div className="flex flex-col divide-y divide-white/[0.06]">
                 {section.docs.map((doc, j) => (
                   <div
                     key={j}
-                    className="bg-[#080808] p-6 flex items-center justify-between gap-4 hover:bg-[#0d0d0d] transition-colors group cursor-pointer"
+                    className="py-5 flex items-center justify-between gap-4 hover:bg-white/[0.02] transition-colors group cursor-pointer px-2"
                   >
-                    <div className="flex items-start gap-4">
-                      <Badge
-                        variant="outline"
-                        className="border-white/10 text-white/30 text-[9px] tracking-widest uppercase flex-none mt-0.5"
-                      >
+                    <div className="flex items-start gap-5">
+                      <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-[#C9A84C]/60 flex-none mt-0.5 w-16">
                         {doc.tag}
-                      </Badge>
+                      </span>
                       <div>
-                        <p className="text-white/80 text-sm font-medium mb-1">
+                        <p className="font-sans text-white/75 text-sm font-medium mb-1">
                           {doc.title}
                         </p>
-                        <p className="text-white/30 text-xs leading-relaxed">
+                        <p className="font-sans text-white/30 text-xs leading-relaxed">
                           {doc.description}
                         </p>
                       </div>
@@ -192,7 +199,7 @@ export default function DocsPage() {
             </div>
           ))}
         </div>
-        <p className="text-white/20 text-xs mt-6">
+        <p className="font-sans text-white/20 text-xs mt-8">
           Full documentation is being formalized. Most docs are in private
           draft. Public versions will be linked here as they are cleared for
           external publishing.
@@ -203,22 +210,18 @@ export default function DocsPage() {
       <section className="bg-[#060606] py-20 mt-8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="mb-12">
-            <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-3">
-              Changelog
-            </p>
-            <h2 className="text-3xl font-bold">What changed.</h2>
+            <p className="label-section mb-3">— Changelog</p>
+            <h2 className="font-heading text-3xl md:text-5xl">What changed.</h2>
           </div>
-          <div className="flex flex-col gap-px bg-white/5">
+          <div className="flex flex-col divide-y divide-white/[0.06]">
             {changelog.map((entry, i) => (
-              <div key={i} className="bg-[#060606] p-6 flex gap-6">
+              <div key={i} className="py-5 flex gap-8">
                 <div className="flex-none w-28">
-                  <p className="text-white/20 text-xs font-mono">{entry.date}</p>
+                  <p className="font-mono text-white/20 text-xs">{entry.date}</p>
                 </div>
                 <div>
-                  <p className="text-white/60 text-xs font-medium mb-1">
-                    {entry.version}
-                  </p>
-                  <p className="text-white/30 text-sm">{entry.summary}</p>
+                  <p className="font-heading text-sm text-white/60 mb-1">{entry.version}</p>
+                  <p className="font-sans text-white/35 text-sm leading-relaxed">{entry.summary}</p>
                 </div>
               </div>
             ))}
@@ -229,65 +232,45 @@ export default function DocsPage() {
       {/* Roadmap Signals */}
       <section className="max-w-7xl mx-auto px-6 py-20">
         <div className="mb-12">
-          <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-3">
-            Roadmap Signals
-          </p>
-          <h2 className="text-3xl font-bold">What&apos;s coming.</h2>
+          <p className="label-section mb-3">— Roadmap Signals</p>
+          <h2 className="font-heading text-3xl md:text-5xl">What&apos;s coming.</h2>
         </div>
-        <div className="flex flex-col gap-px bg-white/5">
+        <div className="flex flex-col divide-y divide-white/[0.06]">
           {roadmapSignals.map((item, i) => (
-            <div
-              key={i}
-              className="bg-[#080808] p-5 flex items-center justify-between"
-            >
-              <p className="text-white/60 text-sm">{item.label}</p>
-              <Badge
-                variant="outline"
-                className={`text-[9px] tracking-widest uppercase border-white/10 ${
-                  item.status === "In Progress"
-                    ? "text-[#FF6B2B] border-[#FF6B2B]/30"
-                    : item.status === "Coming"
-                    ? "text-white/50"
-                    : "text-white/20"
-                }`}
-              >
-                {item.status}
-              </Badge>
+            <div key={i} className="py-5 flex items-center justify-between gap-4">
+              <p className="font-sans text-white/60 text-sm">{item.label}</p>
+              {statusSpan(item.status)}
             </div>
           ))}
         </div>
-        <p className="text-white/20 text-xs mt-4">
+        <p className="font-sans text-white/20 text-xs mt-5">
           Roadmap is milestone-based. No date promises.
         </p>
       </section>
 
       {/* CTA */}
       <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="border border-white/5 p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+        <div className="border border-[#FF6B2B]/15 p-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div>
-            <h2 className="text-xl md:text-2xl font-bold mb-2">
+            <h2 className="font-heading text-2xl md:text-3xl mb-2">
               Questions not answered here?
             </h2>
-            <p className="text-white/40 text-sm max-w-sm">
+            <p className="font-sans text-white/40 text-sm max-w-sm">
               Join the community on Discord. The Core team is active and
               responds to qualified questions.
             </p>
           </div>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-4">
             <a
               href="https://discord.gg/kushoworld"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#FF6B2B] text-white text-xs tracking-widest uppercase px-6 py-3 hover:bg-[#e85a1f] transition-colors"
+              className="btn-ku"
             >
-              Join Discord
-              <ArrowRight size={12} />
+              Join Discord <ArrowRight size={12} />
             </a>
-            <Link
-              href="/protocol"
-              className="inline-flex items-center gap-2 border border-white/15 text-white/60 text-xs tracking-widest uppercase px-6 py-3 hover:border-white/30 hover:text-white transition-colors"
-            >
-              Protocol Overview
+            <Link href="/protocol" className="btn-ghost-ku">
+              Protocol Overview →
             </Link>
           </div>
         </div>

@@ -1,23 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Anton, Bebas_Neue, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Nav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 
-const geistSans = Geist({
-  variable: "--font-sans",
+const antonFont = Anton({
+  variable: "--font-display",
+  weight: "400",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bebasFont = Bebas_Neue({
+  variable: "--font-heading",
+  weight: "400",
   subsets: ["latin"],
+});
+
+const interFont = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const monoFont = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Kusho World — Filipino-Founded Anime x Culture IP",
   description:
-    "Kusho World is a Filipino-founded Anime x Culture IP ecosystem. Core-directed canon with protocol-powered expansion. Build with us.",
+    "Kusho World is a Filipino-founded Anime x Culture IP ecosystem. Core-directed canon with protocol-powered expansion.",
   openGraph: {
     title: "Kusho World",
     description: "Core-directed canon with protocol-powered expansion.",
@@ -33,7 +47,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full`}
+      className={`${antonFont.variable} ${bebasFont.variable} ${interFont.variable} ${monoFont.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-[#080808] text-white">
         <Nav />

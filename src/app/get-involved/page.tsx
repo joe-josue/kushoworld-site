@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
-import { Separator } from "@/components/ui/separator";
 import { ArrowRight, Clock } from "lucide-react";
 
 const lanes = [
@@ -67,22 +65,18 @@ export default function GetInvolvedPage() {
     <div className="flex flex-col">
       {/* Header */}
       <section className="pt-36 pb-20 max-w-7xl mx-auto px-6 w-full">
-        <Badge
-          variant="outline"
-          className="border-[#FF6B2B]/40 text-[#FF6B2B] bg-[#FF6B2B]/5 text-[10px] tracking-widest uppercase mb-5"
-        >
+        <span className="font-heading text-[10px] tracking-[0.2em] uppercase text-white/35 border-l-2 border-[#FF6B2B] pl-3 mb-5 block w-fit">
           Get Involved
-        </Badge>
+        </span>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
           <div>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight leading-none mb-4">
-              Your lane.
-              <br />
+            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mb-4">
+              Your lane.<br />
               <span className="text-white/30">Your terms.</span>
             </h1>
           </div>
           <div>
-            <p className="text-white/50 text-base leading-relaxed">
+            <p className="font-sans text-white/55 text-base leading-relaxed">
               Collector, creator, developer, or operator — there is a defined
               path for every kind of contribution. Clear expectations. Clear
               rights. Clear first step.
@@ -91,14 +85,14 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      <Separator className="bg-white/5" />
+      <hr className="border-t border-white/[0.05]" />
 
       {/* Time-to-first promise */}
-      <section className="max-w-7xl mx-auto px-6 py-12">
-        <div className="bg-[#0d0d0d] border border-white/5 p-6 flex items-center gap-4">
-          <Clock size={16} className="text-[#FF6B2B] flex-none" />
-          <p className="text-white/60 text-sm">
-            <span className="text-white font-medium">Time-to-first-contribution promise:</span>{" "}
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <div className="border border-white/5 p-5 flex items-center gap-4">
+          <Clock size={15} className="text-[#FF6B2B] flex-none" />
+          <p className="font-sans text-white/55 text-sm">
+            <span className="text-white">Time-to-first-contribution promise:</span>{" "}
             Every lane has a defined path to your first meaningful contribution
             within days of onboarding — not months.
           </p>
@@ -108,65 +102,46 @@ export default function GetInvolvedPage() {
       {/* Lanes */}
       <section className="max-w-7xl mx-auto px-6 py-8">
         <div className="mb-12">
-          <p className="text-[#FF6B2B] text-[10px] tracking-widest uppercase mb-3">
-            Contribution Lanes
-          </p>
-          <h2 className="text-3xl font-bold">Choose your path.</h2>
+          <p className="label-section mb-3">— Contribution Lanes</p>
+          <h2 className="font-heading text-3xl md:text-5xl">Choose your path.</h2>
         </div>
-        <div className="flex flex-col gap-px bg-white/5">
+        <div className="flex flex-col divide-y divide-white/[0.06]">
           {lanes.map((lane) => (
             <div
               key={lane.id}
-              className="bg-[#080808] p-8 md:p-10 grid grid-cols-1 md:grid-cols-3 gap-8 hover:bg-[#0d0d0d] transition-colors"
+              className="py-10 grid grid-cols-1 md:grid-cols-3 gap-8"
             >
               {/* Lane ID + title */}
               <div>
-                <p className="text-[#FF6B2B]/40 text-xs font-mono mb-3">
-                  {lane.id}
-                </p>
-                <h3 className="text-2xl font-bold mb-1">{lane.name}</h3>
-                <p className="text-white/30 text-xs tracking-wide">
-                  {lane.tagline}
-                </p>
+                <p className="font-heading text-sm text-[#C9A84C]/50 mb-3">{lane.id}</p>
+                <h3 className="font-heading text-3xl mb-1">{lane.name}</h3>
+                <p className="font-sans text-white/30 text-xs">{lane.tagline}</p>
               </div>
 
               {/* Details */}
               <div>
-                <p className="text-white/50 text-sm leading-relaxed mb-5">
+                <p className="font-sans text-white/55 text-sm leading-relaxed mb-5">
                   {lane.description}
                 </p>
-                <div>
-                  <p className="text-white/20 text-[10px] tracking-widest uppercase mb-2">
-                    Expectations
-                  </p>
-                  <ul className="flex flex-col gap-1.5">
-                    {lane.expectations.map((e, i) => (
-                      <li
-                        key={i}
-                        className="text-white/40 text-xs leading-relaxed flex items-start gap-2"
-                      >
-                        <span className="text-[#FF6B2B] mt-0.5 flex-none">—</span>
-                        {e}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <p className="label-section mb-2">— Expectations</p>
+                <ul className="flex flex-col gap-1.5">
+                  {lane.expectations.map((e, i) => (
+                    <li key={i} className="font-sans text-white/45 text-xs leading-relaxed flex items-start gap-2">
+                      <span className="text-[#FF6B2B] mt-0.5 flex-none">—</span>
+                      {e}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* CTA */}
               <div className="flex flex-col justify-between">
-                <div className="bg-white/3 border border-white/5 p-4 mb-6">
-                  <p className="text-white/20 text-[10px] tracking-widest uppercase mb-1">
-                    Time to First
-                  </p>
-                  <p className="text-white/60 text-xs">{lane.timeToFirst}</p>
+                <div className="border border-white/5 p-4 mb-6">
+                  <p className="label-section mb-1">— Time to First</p>
+                  <p className="font-sans text-white/55 text-xs mt-2">{lane.timeToFirst}</p>
                 </div>
-                <Link
-                  href="#apply"
-                  className="inline-flex items-center gap-2 bg-[#FF6B2B] text-white text-xs tracking-widest uppercase px-5 py-3 hover:bg-[#e85a1f] transition-colors w-fit"
-                >
-                  {lane.cta}
-                  <ArrowRight size={11} />
+                <Link href="#apply" className="btn-ku w-fit">
+                  {lane.cta} <ArrowRight size={11} />
                 </Link>
               </div>
             </div>
@@ -174,22 +149,14 @@ export default function GetInvolvedPage() {
         </div>
       </section>
 
-      {/* Intake form CTA */}
-      <section
-        id="apply"
-        className="max-w-7xl mx-auto px-6 py-20"
-      >
-        <div className="border border-[#FF6B2B]/20 bg-[#FF6B2B]/3 p-10 md:p-16 text-center">
-          <Badge
-            variant="outline"
-            className="border-[#FF6B2B]/40 text-[#FF6B2B] bg-transparent text-[10px] tracking-widest uppercase mb-6"
-          >
+      {/* Intake CTA */}
+      <section id="apply" className="max-w-7xl mx-auto px-6 py-20">
+        <div className="border border-[#FF6B2B]/15 p-10 md:p-16 text-center">
+          <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-emerald-400 block mb-6">
             Intake Open
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to apply?
-          </h2>
-          <p className="text-white/40 max-w-md mx-auto mb-8 text-sm">
+          </span>
+          <h2 className="font-heading text-3xl md:text-5xl mb-4">Ready to apply?</h2>
+          <p className="font-sans text-white/40 max-w-md mx-auto mb-8 text-sm">
             Pick your lane above, then use the intake form to submit your
             application. Core reviews and responds within the published cadence.
           </p>
@@ -198,35 +165,26 @@ export default function GetInvolvedPage() {
               href="https://discord.gg/kushoworld"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#FF6B2B] text-white text-xs tracking-widest uppercase px-8 py-3.5 hover:bg-[#e85a1f] transition-colors"
+              className="btn-ku"
             >
-              Join via Discord
-              <ArrowRight size={12} />
+              Join via Discord <ArrowRight size={12} />
             </a>
-            <Link
-              href="/protocol"
-              className="inline-flex items-center gap-2 border border-white/15 text-white/60 text-xs tracking-widest uppercase px-8 py-3.5 hover:border-white/30 hover:text-white transition-colors"
-            >
-              Read the Protocol
+            <Link href="/protocol" className="btn-ghost-ku">
+              Read the Protocol →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Protocol link */}
-      <section className="bg-[#060606] py-12">
+      {/* Docs link */}
+      <section className="bg-[#060606] py-10">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-white/30 text-sm">
-              Want the full rules? Contribution mechanics, IP rights, and
-              canon guidelines live in the docs.
+            <p className="font-sans text-white/30 text-sm">
+              Want the full rules? IP rights, protocol mechanics, and canon guidelines live in the docs.
             </p>
-            <Link
-              href="/docs"
-              className="inline-flex items-center gap-2 text-white/40 text-[10px] tracking-widest uppercase hover:text-white transition-colors whitespace-nowrap"
-            >
-              View Documentation
-              <ArrowRight size={10} />
+            <Link href="/docs" className="btn-ghost-ku whitespace-nowrap">
+              View Documentation →
             </Link>
           </div>
         </div>

@@ -30,28 +30,26 @@ export function Nav() {
     <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
-        scrolled
-          ? "nav-blur border-b border-white/[0.04]"
-          : "bg-transparent"
+        scrolled ? "nav-blur border-b border-white/[0.04]" : "bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo — Anton display weight */}
         <Link
           href="/"
-          className="text-white font-bold tracking-widest text-xs uppercase hover:opacity-60 transition-opacity"
+          className="font-display text-xl tracking-[0.05em] text-white hover:opacity-60 transition-opacity"
         >
           KUSHO
         </Link>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — Bebas Neue */}
         <nav className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={cn(
-                "text-[11px] tracking-widest uppercase transition-colors duration-200",
+                "font-heading text-[13px] tracking-[0.1em] uppercase transition-colors duration-200",
                 pathname === link.href
                   ? "text-white"
                   : "text-white/35 hover:text-white/70"
@@ -62,22 +60,24 @@ export function Nav() {
           ))}
         </nav>
 
-        {/* Right side */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Right — quiet social link, no CTA button */}
+        <div className="hidden md:flex items-center gap-5">
           <a
             href="https://medium.com/@kushoworld"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] tracking-widest uppercase text-white/25 hover:text-white/60 transition-colors"
+            className="font-heading text-[11px] tracking-[0.12em] uppercase text-white/25 hover:text-white/60 transition-colors"
           >
             News
           </a>
-          <Link
-            href="/get-involved"
-            className="text-[11px] tracking-widest uppercase border border-white/15 text-white/60 px-4 py-2 hover:border-white/30 hover:text-white transition-colors"
+          <a
+            href="https://twitter.com/kushoworld"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-heading text-[11px] tracking-[0.12em] uppercase text-white/25 hover:text-white/60 transition-colors"
           >
-            Join
-          </Link>
+            X
+          </a>
         </div>
 
         {/* Mobile */}
@@ -96,10 +96,8 @@ export function Nav() {
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className={cn(
-                    "text-sm tracking-widest uppercase py-4 px-6 border-b border-white/5 transition-colors",
-                    pathname === link.href
-                      ? "text-white"
-                      : "text-white/35 hover:text-white"
+                    "font-heading text-base tracking-[0.1em] uppercase py-4 px-6 border-b border-white/5 transition-colors",
+                    pathname === link.href ? "text-white" : "text-white/35 hover:text-white"
                   )}
                 >
                   {link.label}
@@ -110,7 +108,7 @@ export function Nav() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
-                className="text-sm tracking-widest uppercase py-4 px-6 border-b border-white/5 text-white/25 hover:text-white transition-colors"
+                className="font-heading text-base tracking-[0.1em] uppercase py-4 px-6 border-b border-white/5 text-white/25 hover:text-white transition-colors"
               >
                 News
               </a>
@@ -118,7 +116,7 @@ export function Nav() {
                 <Link
                   href="/get-involved"
                   onClick={() => setOpen(false)}
-                  className="block text-center text-[11px] tracking-widest uppercase bg-[#FF6B2B] text-white px-4 py-3 hover:bg-[#e85a1f] transition-colors"
+                  className="btn-ku block text-center"
                 >
                   Get Involved
                 </Link>
