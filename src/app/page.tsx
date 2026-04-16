@@ -32,8 +32,8 @@ export default function Home() {
             priority
             quality={95}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/50 to-transparent" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(to top right, #080808 0%, rgba(8,8,8,0.7) 35%, rgba(8,8,8,0.15) 65%, transparent 100%)" }} />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" style={{ height: "30%" }} />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-24 pt-48 w-full">
