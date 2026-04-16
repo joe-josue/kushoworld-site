@@ -3,53 +3,10 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 
 const products = [
-  {
-    name: "Mithikal",
-    kind: "Creative Studio",
-    desc: "An anime and manga studio built inside the Kusho ecosystem. Producing original IP, world-building tools, and narrative infrastructure for the long game.",
-    img: "/assets/Storymap Cypher.gif",
-    isGif: true,
-    href: "https://studio.mithikal.com",
-    external: true,
-    status: "Live",
-  },
-  {
-    name: "Kusho Web Shop",
-    kind: "Apparel & Merch",
-    desc: "Streetwear and collectibles rooted in Kusho World characters. Wearable canon — designed in-house, shipped to holders and fans.",
-    img: "/assets/apparel_1.jpg",
-    isGif: false,
-    href: "https://shop.kushoworld.com",
-    external: true,
-    status: "Live",
-  },
-  {
-    name: "Collectors Profile",
-    kind: "Onchain Identity",
-    desc: "A profile layer for Kusho holders — verify your assets, surface your contributor history, and carry your identity across the ecosystem.",
-    img: "/assets/mockup.png",
-    isGif: false,
-    href: "#",
-    external: false,
-    status: "Coming",
-  },
-  {
-    name: "Kusho Guardians",
-    kind: "Onchain Game",
-    desc: "An MMO-lite built around autonomous NFT companions with independent wallets. Hackathon winner. Now backed by Sovrun in the Hyperliquid ecosystem.",
-    img: "/assets/BBG-SUMMON-1.png",
-    isGif: false,
-    href: "/products",
-    external: false,
-    status: "Live",
-  },
-];
-
-const lanes = [
-  { id: "01", name: "Collector", desc: "Hold canonical assets. Participate in activations and governance signals." },
-  { id: "02", name: "Creator", desc: "Produce work within the world. Submit for canon consideration." },
-  { id: "03", name: "Developer", desc: "Build apps and tools on the IP layer under a defined license." },
-  { id: "04", name: "Operator", desc: "Run programs, platforms, or distribution nodes with a clear mandate." },
+  { name: "Mithikal", kind: "Creative Studio", href: "https://studio.mithikal.com", external: true, status: "Live" },
+  { name: "Kusho Web Shop", kind: "Apparel & Merch", href: "https://shop.kushoworld.com", external: true, status: "Live" },
+  { name: "Kusho Guardians", kind: "Onchain Game", href: "/products", external: false, status: "Live" },
+  { name: "Collectors Profile", kind: "Onchain Identity", href: "/products", external: false, status: "Coming" },
 ];
 
 const socials = [
@@ -71,37 +28,31 @@ export default function Home() {
             src="/assets/Shojin Portal Full.jpg"
             alt="Kusho World"
             fill
-            className="object-cover object-center scale-[1.02]"
+            className="object-cover object-bottom"
             priority
             quality={95}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/50 to-transparent" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 pb-24 pt-48 w-full">
           <div className="max-w-xl">
-            {/* Chapter mark label */}
-            <span className="font-heading text-[10px] tracking-[0.2em] uppercase text-white/35 border-l-2 border-[#FF6B2B] pl-3 mb-6 block">
+            <span className="font-heading text-[13px] tracking-[0.18em] uppercase text-white/40 border-l-2 border-[#FF6B2B] pl-3 mb-6 block">
               Kusho World — Filipino-Founded Anime IP
             </span>
-            {/* Anton display headline */}
-            <h1 className="font-display text-6xl md:text-8xl lg:text-9xl leading-[0.95] mb-7">
+            <h1 className="font-display text-5xl md:text-7xl leading-[0.95] mb-7">
               Freedom is not given,<br />it is taken.
             </h1>
-            <p className="font-sans text-white/65 text-base md:text-lg leading-relaxed max-w-md mb-3">
-              Kusho is a multiverse adventure of revolution and self-discovery.
-            </p>
-            <p className="font-sans text-white/35 text-sm leading-relaxed max-w-md mb-10">
-              A Filipino-founded IP ecosystem rooted in anime, mythology, and a
-              future being built in public. Core-directed canon. Protocol-powered
-              expansion.
+            <p className="font-sans text-white/60 text-base leading-relaxed max-w-md mb-10">
+              A multiverse adventure of revolution and self-discovery — rooted
+              in Filipino mythology, built in public.
             </p>
             <div className="flex flex-wrap gap-4 items-center">
               <Link href="/world" className="btn-ku">
                 Explore the World <ArrowRight size={13} />
               </Link>
-              <Link href="#contribute" className="btn-ghost-ku">
+              <Link href="#expand" className="btn-ghost-ku">
                 Get Involved →
               </Link>
             </div>
@@ -109,215 +60,247 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════ WORLD / CHARACTER STRIP ══════════ */}
-      <section className="bg-[#080808]">
-        <div className="max-w-7xl mx-auto px-6 pt-20 pb-10">
-          <p className="label-section mb-3">— The Universe</p>
-          <h2 className="font-heading text-4xl md:text-6xl leading-tight mb-3">
-            A universe forged in<br />resistance and memory.
+      {/* ══════════ SHINSEKAI — THE WORLD ══════════ */}
+      <section className="relative overflow-hidden" style={{ minHeight: "70vh" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/assets/10b karmic_night_animated.gif"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover opacity-30"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/30 to-[#080808]/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/70 to-transparent" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 flex flex-col justify-center" style={{ minHeight: "70vh" }}>
+          <p className="label-section mb-5">— Shinsekai, 2120</p>
+          <h2 className="font-display text-5xl md:text-7xl leading-[0.95] mb-8 max-w-3xl">
+            The Philippines has been renamed.
+            <br />
+            <em className="not-italic text-white/30">The gods are locked away.</em>
           </h2>
-          <p className="font-sans text-white/60 text-sm md:text-base leading-relaxed max-w-lg mb-4">
-            Shinsekai, 2120. The Philippines has been renamed, the gods locked
-            away in relics, three generations raised under a colonial flag.
-            The Shojin are the ones who remember.
+          <div className="max-w-xl flex flex-col gap-4">
+            <p className="font-sans text-white/55 text-base leading-relaxed">
+              Three generations have grown up under a colonial flag. The old songs
+              are banned. The sacred groves burned to build citadels. Technology
+              and magic fused into a single instrument of control. But the land
+              remembers. The realms remember.
+            </p>
+            <p className="font-sans text-white/35 text-sm leading-relaxed">
+              And now, the people are starting to remember too. The Shojin — the
+              revolutionary resistance — are fighting to take back what was erased.
+            </p>
+          </div>
+          <div className="mt-10">
+            <Link href="/world" className="btn-ghost-ku">
+              Enter the World →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ PULL QUOTE ══════════ */}
+      <section className="bg-[#060606] py-24">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <p className="font-display text-3xl md:text-5xl text-white/70 leading-[1.1] mb-6">
+            &ldquo;Before the Colonists came, we knew the world as it truly was.
+            The wind carried whispers from the mountains, the rivers flowed
+            with memories from the sea.&rdquo;
           </p>
-          <p className="font-sans text-white/35 text-xs md:text-sm leading-relaxed max-w-lg mb-12">
-            The Shojin are the canonical core. Famions are the cultural engine.
-            What you contribute can become part of the official record.
+          <p className="font-sans text-white/20 text-xs tracking-widest uppercase">
+            — Manong Pantas
           </p>
         </div>
+      </section>
 
-        {/* Horizontal character strip */}
-        <div className="relative">
-          <div className="flex gap-3 overflow-x-auto px-6 pb-0 snap-x snap-mandatory">
-            {[
-              { src: "/assets/Shojin Portal Cinematic.jpg", label: "Shojin Portal", wide: true },
-              { src: "/assets/Datu.png", label: "Datu" },
-              { src: "/assets/Reed.png", label: "Reed" },
-              { src: "/assets/BBG V2.png", label: "BBG" },
-              { src: "/assets/dadas.png", label: "Dadas — Famion" },
-              { src: "/assets/SHO Agent.jpg", label: "SHO Agent" },
-            ].map((item, i) => (
+      {/* ══════════ THE SHOJIN ══════════ */}
+      <section className="relative overflow-hidden bg-[#080808]">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="label-section mb-5">— The Shojin</p>
+              <h2 className="font-heading text-4xl md:text-5xl leading-tight mb-6">
+                The revolutionary people.
+              </h2>
+              <p className="font-sans text-white/55 text-base leading-relaxed mb-4">
+                The Shojin are not a single organization but a movement — the
+                collective resistance of a people who refused to let their world
+                be erased. Warriors. Scholars. Rebels. They remember the old
+                names and fight under new ones.
+              </p>
+              <p className="font-sans text-white/30 text-sm leading-relaxed mb-8">
+                On-chain, the Shojin are the identity artifacts from which all
+                Kusho World canon radiates — the foundation everything is
+                built on.
+              </p>
+              <Link href="/world" className="btn-ghost-ku">
+                Explore the Shojin →
+              </Link>
+            </div>
+
+            {/* Manga art collage */}
+            <div className="grid grid-cols-5 grid-rows-2 gap-1.5 h-[360px] md:h-[420px]">
+              <div className="relative col-span-3 row-span-1 overflow-hidden panel-border">
+                <Image src="/assets/Rambulan.png" alt="Rambulan" fill className="object-cover object-top" />
+              </div>
+              <div className="relative col-span-2 row-span-2 overflow-hidden panel-border">
+                <Image src="/assets/Meeting.png" alt="The Shojin" fill className="object-cover object-top" />
+              </div>
+              <div className="relative col-span-3 row-span-1 overflow-hidden panel-border">
+                <Image src="/assets/07 kouncil_launch.png" alt="Kouncil" fill className="object-cover object-center" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ FAMIONS ══════════ */}
+      <section className="relative overflow-hidden bg-[#0e0e18]">
+        <div className="max-w-7xl mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            {/* Settlement scene — floating animated characters */}
+            <div className="order-2 md:order-1 relative">
               <div
-                key={i}
-                className={`flex-none snap-start group overflow-hidden border border-white/5 ${
-                  item.wide ? "w-[520px] md:w-[640px]" : "w-56 md:w-64"
-                }`}
+                className="relative mx-auto"
+                style={{
+                  width: "clamp(320px, 48vw, 520px)",
+                  aspectRatio: "1 / 1",
+                  animation: "islandFloat 8s ease-in-out infinite",
+                }}
               >
-                <div className="relative h-80 md:h-96">
-                  <Image
-                    src={item.src}
-                    alt={item.label}
-                    fill
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <p className="absolute bottom-4 left-4 font-heading text-[11px] tracking-[0.1em] uppercase text-white/70">
+                {/* Settlement island base */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/assets/famion-settlement.png"
+                  alt="Famions Settlement"
+                  className="absolute inset-0 w-full h-full object-contain"
+                />
+
+                {/* Adarna — left, slow gentle bob */}
+                <div className="absolute" style={{ left: "14%", bottom: "36%", width: "72px" }}>
+                  <div
+                    className="relative block w-full"
+                    style={{
+                      animation: "famionCharEnter 0.7s ease-out 0.4s both, famionFloatA 5.2s ease-in-out infinite 1.2s",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/assets/famion-adarna.png"
+                      alt="Adarna"
+                      className="w-full h-auto block"
+                      style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.35))" }}
+                    />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/assets/famion-adarna-blink.png"
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-contain object-bottom"
+                      style={{ animation: "famionBlink 4.8s ease-in-out infinite 2.1s" }}
+                    />
+                  </div>
+                </div>
+
+                {/* Duwende — center, paces left/right */}
+                <div className="absolute" style={{ left: "40%", bottom: "30%", width: "72px" }}>
+                  <div
+                    className="relative block w-full"
+                    style={{
+                      animation: "famionCharEnter 0.7s ease-out 0.55s both, famionFloatB 7.5s ease-in-out infinite 1.4s",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/assets/famion-duwende.png"
+                      alt="Duwende"
+                      className="w-full h-auto block"
+                      style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.35))" }}
+                    />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/assets/famion-duwende-blink.png"
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-contain object-bottom"
+                      style={{ animation: "famionBlink 6.2s ease-in-out infinite 0.7s" }}
+                    />
+                  </div>
+                </div>
+
+                {/* Sundo — right, faster smaller bob, flipped */}
+                <div className="absolute" style={{ left: "62%", bottom: "37%", width: "72px", transform: "scaleX(-1)" }}>
+                  <div
+                    className="relative block w-full"
+                    style={{
+                      animation: "famionCharEnter 0.7s ease-out 0.7s both, famionFloatC 4.4s ease-in-out infinite 0.8s",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/assets/famion-sundo.png"
+                      alt="Sundo"
+                      className="w-full h-auto block"
+                      style={{ filter: "drop-shadow(0 4px 10px rgba(0,0,0,0.35))" }}
+                    />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src="/assets/famion-sundo-blink.png"
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-contain object-bottom"
+                      style={{ animation: "famionBlink 3.9s ease-in-out infinite 4.2s" }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="order-1 md:order-2">
+              <p className="label-section mb-5">— Famions</p>
+              <h2 className="font-heading text-4xl md:text-5xl leading-tight mb-6">
+                Spirit creatures from<br />between realms.
+              </h2>
+              <p className="font-sans text-white/55 text-base leading-relaxed mb-4">
+                Famions are companion spirits tied to the boundary between
+                realms — forests, mountains, darkness, dreams. Ancient Filipinos
+                bonded with them through ritual. Partnership, not domestication.
+                The Colonists banned it. The Seishi rediscovered it.
+              </p>
+              <p className="font-sans text-white/30 text-sm leading-relaxed mb-8">
+                Outside the lore, Famions are the bridge to mainstream culture —
+                expressive, viral, and rooted in the world. 40K+ TikTok audience
+                and growing.
+              </p>
+              <Link href="/world" className="btn-ghost-ku">
+                Meet the Famions →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ IN MOTION ══════════ */}
+      <section className="bg-[#080808] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <p className="label-section mb-10">— In Motion</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {[
+              { src: "/assets/09b karmic_points_animated.gif", label: "Karmic Points" },
+              { src: "/assets/10b karmic_night_animated.gif", label: "Karmic Night" },
+              { src: "/assets/KarmicRise 2.GIF", label: "Karmic Rise" },
+              { src: "/assets/Storymap Cypher.gif", label: "Storymap Cypher" },
+            ].map((item, i) => (
+              <div key={i} className="relative aspect-video overflow-hidden group bg-black panel-border">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.03] transition-all duration-500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <p className="font-heading text-[11px] tracking-[0.1em] uppercase text-white/70">
                     {item.label}
                   </p>
                 </div>
               </div>
             ))}
-          </div>
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#080808] to-transparent pointer-events-none" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-6 pt-10 pb-20">
-          <Link href="/world" className="btn-ghost-ku">
-            Enter the World →
-          </Link>
-        </div>
-      </section>
-
-      {/* ══════════ PROTOCOL ══════════ */}
-      <section className="relative overflow-hidden bg-[#060606]">
-        {/* Wide animated background */}
-        <div className="relative h-[500px] md:h-[640px] w-full">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/assets/10b karmic_night_animated.gif"
-            alt=""
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#060606] via-[#060606]/30 to-[#060606]/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#060606] via-[#060606]/20 to-transparent" />
-
-          <div className="absolute inset-0 flex flex-col justify-end max-w-7xl mx-auto px-6 pb-16">
-            <span className="font-heading text-[10px] tracking-[0.2em] uppercase text-white/35 border-l-2 border-[#FF6B2B] pl-3 mb-5 block w-fit">
-              Protocol
-            </span>
-            <h2 className="font-display text-5xl md:text-7xl leading-[0.95] mb-5 max-w-2xl">
-              Core holds the canon.
-              <br />
-              <em className="not-italic text-white/50">The world is open to builders.</em>
-            </h2>
-            <p className="font-sans text-white/65 text-sm md:text-base leading-relaxed max-w-lg mb-8">
-              The protocol is the engine. Four defined lanes — collector,
-              creator, developer, operator — each with real expectations, real
-              rights, and a clear path to your first contribution.
-            </p>
-            <Link href="/protocol" className="btn-ghost-ku w-fit">
-              Read the Protocol →
-            </Link>
-          </div>
-        </div>
-
-        {/* Protocol steps — vertical timeline */}
-        <div className="max-w-7xl mx-auto px-6 pb-20 pt-4">
-          <div className="flex flex-col divide-y divide-white/[0.06]">
-            {[
-              { step: "Propose", desc: "Submit a contribution scoped within Kusho's IP and lore." },
-              { step: "Review", desc: "Core evaluates alignment. Feedback within the published cadence." },
-              { step: "Prove", desc: "Execute the contribution. Community and Core observe." },
-              { step: "Ratify", desc: "Core ratifies what becomes permanent. Reputation is earned." },
-            ].map((s, i) => (
-              <div key={i} className="grid grid-cols-[60px_1fr] gap-8 py-8 group">
-                <div className="text-right">
-                  <span className="font-display text-5xl text-white/[0.07] leading-none select-none">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-heading text-2xl text-white/85 mb-2 group-hover:text-[#C9A84C] transition-colors">
-                    {s.step}
-                  </p>
-                  <p className="font-sans text-white/50 text-sm leading-relaxed">{s.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════ PRODUCTS ══════════ */}
-      <section className="bg-[#080808] py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="label-section mb-3">— Products</p>
-          <h2 className="font-heading text-4xl md:text-6xl leading-tight mb-3">
-            What the ecosystem has shipped.
-          </h2>
-          <p className="font-sans text-white/60 text-sm md:text-base leading-relaxed max-w-lg mb-14">
-            Each product here exists because someone inside or adjacent to
-            Kusho World built it and kept building.
-          </p>
-
-          {/* 2×2 product grid — real gap, no gap-px trick */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            {products.map((p, i) => (
-              <div key={i} className="group panel-border flex flex-col">
-                {/* Image */}
-                <div className="relative h-64 md:h-72 overflow-hidden bg-black">
-                  <div className="absolute top-4 left-4 z-10">
-                    {p.status === "Live" ? (
-                      <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-emerald-400">● Live</span>
-                    ) : (
-                      <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-white/25">◌ Coming</span>
-                    )}
-                  </div>
-                  {p.isGif ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={p.img}
-                      alt={p.name}
-                      className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                    />
-                  ) : (
-                    <Image
-                      src={p.img}
-                      alt={p.name}
-                      fill
-                      className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
-                    />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
-                </div>
-
-                {/* Copy */}
-                <div className="p-7 flex flex-col flex-1 justify-between">
-                  <div>
-                    <p className="label-section mb-2">{p.kind}</p>
-                    <h3 className="font-heading text-2xl text-white mb-3">{p.name}</h3>
-                    <p className="font-sans text-white/65 text-sm leading-relaxed">{p.desc}</p>
-                  </div>
-                  {p.href !== "#" && (
-                    <div className="mt-6">
-                      {p.external ? (
-                        <a href={p.href} target="_blank" rel="noopener noreferrer" className="btn-ghost-ku">
-                          Visit {p.name} <ArrowUpRight size={11} />
-                        </a>
-                      ) : (
-                        <Link href={p.href} className="btn-ghost-ku">
-                          Learn More →
-                        </Link>
-                      )}
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Wide apparel banner */}
-          <div className="mt-5 grain relative overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="md:col-span-2 relative h-64 md:h-80 overflow-hidden group panel-border">
-                <Image
-                  src="/assets/apparel_2.jpg"
-                  alt="Kusho Apparel"
-                  fill
-                  className="object-cover object-top group-hover:scale-[1.02] transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#080808]/50 to-transparent" />
-              </div>
-              <div className="flex flex-col gap-5">
-                <div className="relative h-[148px] overflow-hidden group panel-border">
-                  <Image src="/assets/bbg_merch_1.png" alt="BBG Merch" fill className="object-cover group-hover:scale-[1.03] transition-transform duration-700" />
-                </div>
-                <div className="relative h-[148px] overflow-hidden group panel-border">
-                  <Image src="/assets/skullboi_merch_1.png" alt="Skullboi Merch" fill className="object-cover group-hover:scale-[1.03] transition-transform duration-700" />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -336,38 +319,37 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#080808]/60 via-transparent to-[#080808]/60" />
         <div className="absolute inset-0 flex items-center justify-center text-center px-6">
           <p className="font-display text-5xl md:text-7xl text-white leading-[0.95]">
-            SOMETHING IS<br />TAKING SHAPE.
+            THE OLD WORLD<br />IS WAKING UP.
           </p>
         </div>
       </section>
 
-      {/* ══════════ CONTRIBUTE / GET INVOLVED ══════════ */}
-      <section id="contribute" className="relative overflow-hidden bg-[#060606] py-24">
-        <div className="absolute inset-0 opacity-15">
+      {/* ══════════ EXPAND THE UNIVERSE ══════════ */}
+      <section id="expand" className="relative overflow-hidden bg-[#080808] py-24">
+        <div className="absolute inset-0 opacity-8">
           <Image src="/assets/09a karmic_points.png" alt="" fill className="object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#060606] via-transparent to-[#060606]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-[#080808]" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
-              <p className="label-section mb-4">— Get Involved</p>
-              <h2 className="font-heading text-4xl md:text-6xl leading-tight mb-5">
-                There are real ways<br />to participate here.
+              <p className="label-section mb-5">— Get Involved</p>
+              <h2 className="font-heading text-4xl md:text-5xl leading-tight mb-5">
+                Expand the universe.
               </h2>
-              <p className="font-sans text-white/60 text-sm md:text-base leading-relaxed mb-4">
-                Not vague invitations — four structured lanes, each with defined
-                expectations and rights. Collectors, creators, developers, and
-                operators all have a place, and a clear path to their first
-                contribution.
+              <p className="font-sans text-white/55 text-base leading-relaxed mb-4">
+                Contribute storylines, locations, and characters with real roads
+                to becoming official — or build products, services, and
+                experiences on top of the foundation.
               </p>
-              <p className="font-sans text-white/35 text-sm leading-relaxed mb-10">
-                Full protocol docs, IP rights, and builder license terms live in
-                the documentation hub.
+              <p className="font-sans text-white/30 text-sm leading-relaxed mb-10">
+                The protocol defines how contribution works: clear expectations,
+                clear rights, and a path from first submission to canon status.
               </p>
               <div className="flex flex-wrap gap-4 items-center">
                 <Link href="/get-involved" className="btn-ku">
-                  Choose Your Lane <ArrowRight size={13} />
+                  Learn More <ArrowRight size={13} />
                 </Link>
                 <Link href="/docs" className="btn-ghost-ku">
                   Documentation →
@@ -375,20 +357,73 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Lanes — divide-y, no gap-px */}
-            <div className="flex flex-col divide-y divide-white/[0.06]">
-              {lanes.map((lane) => (
-                <div key={lane.id} className="flex items-start gap-5 py-5">
-                  <span className="font-heading text-sm text-[#C9A84C]/50 flex-none mt-0.5">
-                    {lane.id}
-                  </span>
-                  <div>
-                    <p className="font-heading text-lg text-white/80 mb-1">{lane.name}</p>
-                    <p className="font-sans text-white/55 text-xs leading-relaxed">{lane.desc}</p>
-                  </div>
+            <div className="flex flex-col gap-5">
+              {[
+                { label: "Contribute to Canon", desc: "Submit storylines, characters, and art. If it earns ratification, it becomes part of the official record." },
+                { label: "Build on the Foundation", desc: "Products, experiences, games — built on Kusho IP through defined builder paths with clear terms." },
+                { label: "Advanced Contributors", desc: "Film, print comics, infrastructure, large-ticket projects — get in touch directly." },
+              ].map((path, i) => (
+                <div key={i} className="panel-border p-7">
+                  <h3 className="font-heading text-lg text-white/85 mb-2">{path.label}</h3>
+                  <p className="font-sans text-white/45 text-sm leading-relaxed">{path.desc}</p>
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════ PRODUCTS ══════════ */}
+      <section className="bg-[#060606] py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="label-section mb-3">— Products</p>
+              <h2 className="font-heading text-3xl md:text-4xl">What the ecosystem has shipped.</h2>
+            </div>
+            <Link href="/products" className="btn-ghost-ku hidden md:flex">
+              View All →
+            </Link>
+          </div>
+
+          <div className="flex flex-col divide-y divide-white/[0.06]">
+            {products.map((p, i) => (
+              <div key={i} className="py-5 flex items-center justify-between gap-4 group">
+                <div className="flex items-center gap-6">
+                  <span className="font-heading text-sm text-white/20 flex-none w-8">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <p className="font-heading text-lg text-white/80 group-hover:text-white transition-colors">
+                      {p.name}
+                    </p>
+                    <p className="font-sans text-white/30 text-xs">{p.kind}</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-6">
+                  {p.status === "Live" ? (
+                    <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-emerald-400">● Live</span>
+                  ) : (
+                    <span className="font-heading text-[9px] tracking-[0.15em] uppercase text-white/25">◌ Coming</span>
+                  )}
+                  {p.external ? (
+                    <a href={p.href} target="_blank" rel="noopener noreferrer" className="btn-ghost-ku">
+                      Visit <ArrowUpRight size={10} />
+                    </a>
+                  ) : (
+                    <Link href={p.href} className="btn-ghost-ku">
+                      Details <ArrowRight size={10} />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-6 md:hidden">
+            <Link href="/products" className="btn-ghost-ku">
+              View All Products →
+            </Link>
           </div>
         </div>
       </section>
@@ -397,7 +432,6 @@ export default function Home() {
       <section className="bg-[#080808] py-20">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {/* Wide image panel */}
             <div className="md:col-span-3 relative h-72 md:h-auto overflow-hidden panel-border">
               <Image
                 src="/assets/SHO Agent.jpg"
@@ -408,21 +442,16 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#080808]/50 md:to-[#080808]" />
             </div>
 
-            {/* Copy */}
             <div className="md:col-span-2 flex flex-col justify-center py-6 md:py-0 md:pl-4">
               <p className="label-section mb-4">— Labs</p>
               <h2 className="font-heading text-3xl md:text-5xl leading-tight mb-5">
                 Malaya Labs.<br />
                 <span className="text-white/45">Lean by design.</span>
               </h2>
-              <p className="font-sans text-white/55 text-sm leading-relaxed mb-4">
-                Malaya Labs is the operating entity behind Kusho. Strategy,
-                execution, product incubation, and ecosystem stewardship — done
-                with discipline and minimal overhead.
-              </p>
-              <p className="font-sans text-white/25 text-xs leading-relaxed mb-8">
-                If you want to collaborate, build a partnership, or bring something
-                into the ecosystem, the Labs team is the right door.
+              <p className="font-sans text-white/55 text-sm leading-relaxed mb-8">
+                The operating entity behind Kusho. Strategy, execution, product
+                incubation, and ecosystem stewardship — done with discipline and
+                minimal overhead.
               </p>
               <div className="flex flex-col gap-2">
                 <a
@@ -442,47 +471,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══════════ IN MOTION ══════════ */}
-      <section className="bg-[#060606] py-20">
-        <div className="max-w-7xl mx-auto px-6">
-          <p className="label-section mb-10">— In Motion</p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {[
-              { src: "/assets/09b karmic_points_animated.gif", label: "Karmic Points" },
-              { src: "/assets/10b karmic_night_animated.gif", label: "Karmic Night" },
-              { src: "/assets/KarmicRise 2.GIF", label: "Karmic Rise" },
-              { src: "/assets/Storymap Cypher.gif", label: "Storymap Cypher" },
-            ].map((item, i) => (
-              <div key={i} className="relative aspect-square overflow-hidden group bg-black panel-border">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.src}
-                  alt={item.label}
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-[1.04] transition-all duration-500"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 p-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="font-heading text-[11px] tracking-[0.1em] uppercase text-white/70">
-                    {item.label}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ══════════ CONTACT / SOCIAL ══════════ */}
-      <section className="relative overflow-hidden bg-[#080808] py-24">
+      <section className="relative overflow-hidden bg-[#060606] py-24">
         <div className="absolute inset-0 opacity-10">
           <Image src="/assets/Shojin Portal Full.jpg" alt="" fill className="object-cover object-top" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080808] to-[#080808]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#060606] to-[#060606]/95" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
               <p className="label-section mb-5">— Find Us</p>
-              <h2 className="font-heading text-4xl md:text-6xl leading-tight mb-6">
+              <h2 className="font-heading text-4xl md:text-5xl leading-tight mb-6">
                 The world is open.
                 <br />
                 <span className="text-white/45">

@@ -143,10 +143,16 @@
   /* Section label — replaces the SaaS tracking-widest pattern */
   .label-section {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     color: oklch(0.65 0.15 70 / 65%);
+  }
+
+  @media (min-width: 768px) {
+    .label-section {
+      font-size: 0.875rem;
+    }
   }
 
   /* CTA — primary */
@@ -249,4 +255,41 @@
 @keyframes text-shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
+}
+
+/* ── Famion Settlement Scene — floating characters ── */
+@keyframes islandFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+@keyframes famionFloatA {
+  0%, 100% { transform: translateY(0); }
+  55% { transform: translateY(-7px); }
+}
+
+@keyframes famionFloatB {
+  0%   { transform: translateX(-8px) scaleX(1); }
+  22%  { transform: translateX(-8px) scaleX(1); animation-timing-function: step-start; }
+  23%  { transform: translateX(-8px) scaleX(-1); }
+  50%  { transform: translateX(8px) scaleX(-1); }
+  72%  { transform: translateX(8px) scaleX(-1); animation-timing-function: step-start; }
+  73%  { transform: translateX(8px) scaleX(1); }
+  100% { transform: translateX(-8px) scaleX(1); }
+}
+
+@keyframes famionFloatC {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-5px); }
+}
+
+@keyframes famionBlink {
+  0%, 88% { opacity: 0; }
+  91%, 96% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes famionCharEnter {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
 }

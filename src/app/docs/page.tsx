@@ -269,8 +269,8 @@ export default function DocsPage() {
             >
               Join Discord <ArrowRight size={12} />
             </a>
-            <Link href="/protocol" className="btn-ghost-ku">
-              Protocol Overview →
+            <Link href="/get-involved" className="btn-ghost-ku">
+              Get Involved →
             </Link>
           </div>
         </div>

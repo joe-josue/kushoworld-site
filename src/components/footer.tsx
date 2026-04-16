@@ -3,9 +3,8 @@ import { ArrowUpRight } from "lucide-react";
 
 const pages = [
   { href: "/world", label: "World" },
-  { href: "/protocol", label: "Protocol" },
-  { href: "/products", label: "Products" },
   { href: "/get-involved", label: "Get Involved" },
+  { href: "/products", label: "Products" },
   { href: "/labs", label: "Labs" },
   { href: "/docs", label: "Docs" },
 ];
@@ -120,8 +119,8 @@ export function Footer() {
             <Link href="/docs" className="font-sans text-white/15 text-[11px] hover:text-white/35 transition-colors">
               Documentation
             </Link>
-            <Link href="/protocol" className="font-sans text-white/15 text-[11px] hover:text-white/35 transition-colors">
-              Protocol
+            <Link href="/get-involved" className="font-sans text-white/15 text-[11px] hover:text-white/35 transition-colors">
+              Get Involved
             </Link>
           </div>
         </div>
