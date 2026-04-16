@@ -32,7 +32,7 @@ export default function Home() {
             priority
             quality={95}
           />
-          <div className="absolute inset-0" style={{ background: "linear-gradient(to top right, #080808 0%, rgba(8,8,8,0.65) 30%, rgba(8,8,8,0.2) 60%, transparent 100%)" }} />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent" />
         </div>
 
